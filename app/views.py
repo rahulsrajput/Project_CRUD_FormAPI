@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from .forms import EmployeeForm
+from .models import Employee
 
 # Create your views here.
 def home(request):
@@ -6,4 +8,6 @@ def home(request):
 
 
 def create(request):
-    return render(request, 'create.html')
+    form = EmployeeForm()
+    context = {'form':form}
+    return render(request, 'create.html',context)

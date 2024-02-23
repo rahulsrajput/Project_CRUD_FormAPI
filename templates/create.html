@@ -2,14 +2,18 @@
 {% block title %}Add Employee{% endblock %}
 {% block content %}
 <div class="row">
-    <div class="col-lg-8 m-2 mt-4" >
-        <h1 style="background-color: yellow;">Add Employee</h1>
+    <div class="col-lg-8" >
+        <h1>Add Employee</h1>
     </div>     
 </div>
 
 <div class="row">
-    <div class="col">
-        
+    <div class="col-lg-8 mt-4">
+        <form action="" method="post">
+            {% csrf_token %}
+            {{form.as_p}}
+            <button type="submit" class="btn btn-success">submit</button>
+        </form>
     </div>
 </div>
 {% endblock %}
