@@ -1,0 +1,44 @@
+{% extends 'index.html' %}
+{% block title %}Update{% endblock %}
+{% block content %}
+<div class="row">
+    <div class="col-lg-8">
+        <h1>Update Employee</h1>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-8 mt-4">
+        <form action="" method="post">
+            {% csrf_token %}
+
+            <p>
+                <label for="id_first_name">First name:</label>
+                <input type="text" name="first_name" class="form-control" required id="id_first_name" value="">
+            </p>
+
+            <p>
+                <label for="id_last_name">Last name:</label>
+                <input type="text" name="last_name" class="form-control" required id="id_last_name" value="">
+            </p>
+
+            <p>
+                <label for="id_email">Email:</label>
+                <input type="email" name="email" class="form-control" maxlength="320" required id="id_email" value="">
+            </p>
+
+            <p>
+                <label for="id_salary">Salary:</label>
+                <input type="number" name="salary" class="form-control" required id="id_salary" value="">
+            </p>
+
+            <p>
+                <label for="id_date">Date:</label>
+                <input type="text" name="date" class="form-control" required id="id_date" value="">
+            </p>
+
+            <a href="#" class="btn btn-warning mt-4">Update</a>
+        </form>
+    </div>
+</div>
+{% endblock %}

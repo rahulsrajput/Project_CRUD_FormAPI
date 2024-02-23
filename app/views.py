@@ -11,3 +11,7 @@ def create(request):
     form = EmployeeForm()
     context = {'form':form}
     return render(request, 'create.html',context)
+
+
+def update(request):
+    return render(request, 'update.html')

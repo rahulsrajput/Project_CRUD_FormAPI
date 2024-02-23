@@ -24,4 +24,6 @@ urlpatterns = [
     path('', views.home, name='Home'),
 
     path('create/', views.create, name='Create'),
+
+    path('update/', views.update, name='update')
 ]
