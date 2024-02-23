@@ -25,5 +25,5 @@ urlpatterns = [
 
     path('create/', views.create, name='Create'),
 
-    path('update/', views.update, name='update')
+    path('update/', views.update, name='Update')
 ]
