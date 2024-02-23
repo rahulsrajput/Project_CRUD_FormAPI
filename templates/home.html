@@ -2,8 +2,47 @@
 {% block title %}Employee{% endblock %}
 {% block content %}
 <div class="row">
-    <div class="col-lg-10 mt-4">
-        <h1 style="background-color: yellow;">Employee Management Software</h1>
+    <div>
+        <h1 class="col-lg-8 m-2 mt-4">Employee Management Software</h1>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col m-2">
+        <a href="#" class="btn btn-primary">Add Employee</a>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col m-2 table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">No</th>
+                    <th scope="col">First Name</th>
+                    <th scope="col">Last Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Salary</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>mark@gmail.com</td>
+                    <td>$50000</td>
+                    <td>2024/02/22</td>
+                    <td>
+                        <a href="#" style="color: black;"><i class="material-icons">&#xe923;</i></a>
+
+                        <a href="#" style="color: black;"><i class="material-icons">&#xe872;</i></a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </div>
 {% endblock %}
