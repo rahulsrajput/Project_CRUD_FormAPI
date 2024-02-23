@@ -5,7 +5,12 @@ from django.http import HttpResponseRedirect
 
 # Create your views here.
 def home(request):
-    return render(request, 'home.html')
+    employee_objects = Employee.objects.all()
+    # print(employee_objects)
+
+    context = {'objects':employee_objects}
+
+    return render(request, 'home.html',context)
 
 
 def create(request):

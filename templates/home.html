@@ -18,7 +18,7 @@
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <th scope="col">No</th>
+                    <th scope="col">ID.</th>
                     <th scope="col">First Name</th>
                     <th scope="col">Last Name</th>
                     <th scope="col">Email</th>
@@ -28,19 +28,21 @@
                 </tr>
             </thead>
             <tbody>
+                {% for i in objects %}
                 <tr>
-                    <td>1</td>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>mark@gmail.com</td>
-                    <td>$50000</td>
-                    <td>2024/02/22</td>
+                    <td>{{i.id}}</td>
+                    <td>{{i.first_name}}</td>
+                    <td>{{i.last_name}}</td>
+                    <td>{{i.email}}</td>
+                    <td>${{i.salary}}</td>
+                    <td>{{i.date_of_joining}}</td>
                     <td>
                         <a href="{% url 'Update' %}" style="color: black;"><i class="material-icons">&#xe923;</i></a>
 
                         <a href="#" style="color: black;"><i class="material-icons">&#xe872;</i></a>
                     </td>
                 </tr>
+                {% endfor %}
             </tbody>
         </table>
     </div>
