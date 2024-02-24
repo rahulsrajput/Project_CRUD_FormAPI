@@ -35,7 +35,7 @@
 
             <p>
                 <label for="id_date">Date: <small>YYYY-MM-DD</small></label>
-                <input type="text" name="date" class="form-control" value="{{object.date_of_joining}}">
+                <input type="text" name="date" class="form-control" value="{{object.date_of_joining | date:'Y-m-d'}}">
             </p>
 
             <button type="submit" class="btn btn-danger">update</button>
