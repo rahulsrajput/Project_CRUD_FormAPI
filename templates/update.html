@@ -34,11 +34,11 @@
             </p>
 
             <p>
-                <label for="id_date">Date:</label>
+                <label for="id_date">Date: <small>YYYY-MM-DD</small></label>
                 <input type="text" name="date" class="form-control" value="{{object.date_of_joining}}">
             </p>
 
-            <button type="submit">update</button>
+            <button type="submit" class="btn btn-danger">update</button>
             <a href="{% url 'Home' %}" class="btn btn-success">Back</a>
         </form>
 

@@ -36,15 +36,22 @@ def create(request):
 
 def update(request, id):
     if request.method == 'POST':
-        pass
-            
+        form = EmployeeForm(request.POST)
+        # print(form)
+        if form.is_valid():
+            FirstName = form.cleaned_data['first_name']
+            LastName = form.cleaned_data['last_name']
+            Email = form.cleaned_data['email']
+            Salary = form.cleaned_data['salary']
+            Date = form.cleaned_data['date']
 
-    else:
-        employee_object = Employee.objects.get(pk=id)
-        # print(employee_object)
-        
+            object = Employee(pk=id, first_name=FirstName, last_name=LastName, email=Email, salary=Salary, date_of_joining=Date)
 
-    return render(request, 'update.html',context = {'object':employee_object})
+            object.save()
+            return HttpResponseRedirect('/')
+
+    object = Employee.objects.get(pk=id)
+    return render(request, 'update.html', context={'object':object})
 
 
 def delete(request, id):
