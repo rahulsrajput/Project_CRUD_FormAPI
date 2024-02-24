@@ -34,9 +34,21 @@ def create(request):
     return render(request, 'create.html',context)
 
 
-def update(request):
-    return render(request, 'update.html')
+def update(request, id):
+    if request.method == 'POST':
+        pass
+            
+
+    else:
+        employee_object = Employee.objects.get(pk=id)
+        # print(employee_object)
+        
+
+    return render(request, 'update.html',context = {'object':employee_object})
 
 
-def delete(request):
-    pass
+def delete(request, id):
+    object = Employee.objects.get(pk = id)
+    print(object)
+    object.delete()
+    return HttpResponseRedirect('/')

@@ -37,9 +37,9 @@
                     <td>${{i.salary}}</td>
                     <td>{{i.date_of_joining}}</td>
                     <td>
-                        <a href="{% url 'Update' %}" style="color: black;"><i class="material-icons">&#xe923;</i></a>
+                        <a href="{% url 'Update' i.id %}" style="color: black;"><i class="material-icons">&#xe923;</i></a>
 
-                        <a href="#" style="color: black;"><i class="material-icons">&#xe872;</i></a>
+                        <a href="{% url 'Delete' i.id %}" style="color: black;"><i class="material-icons">&#xe872;</i></a>
                     </td>
                 </tr>
                 {% endfor %}
