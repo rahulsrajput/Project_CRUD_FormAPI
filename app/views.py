@@ -2,6 +2,7 @@ from django.shortcuts import render
 from .forms import EmployeeForm
 from .models import Employee
 from django.http import HttpResponseRedirect
+from django.contrib import messages
 
 # Create your views here.
 def home(request):
@@ -26,6 +27,7 @@ def create(request):
             E = Employee(first_name=first_name, last_name=last_name,email=email,salary=salary,date_of_joining=date)
             E.save()
 
+            messages.success(request, 'Successfully Created')
             return HttpResponseRedirect('/')
     else:
         form = EmployeeForm()
@@ -48,6 +50,7 @@ def update(request, id):
             object = Employee(pk=id, first_name=FirstName, last_name=LastName, email=Email, salary=Salary, date_of_joining=Date)
 
             object.save()
+            messages.success(request, 'Successfully Updated')
             return HttpResponseRedirect('/')
 
     object = Employee.objects.get(pk=id)
@@ -58,4 +61,5 @@ def delete(request, id):
     object = Employee.objects.get(pk = id)
     print(object)
     object.delete()
+    messages.success(request, 'Successfully Deleted')
     return HttpResponseRedirect('/')
